@@ -19,9 +19,6 @@ typedef long long ll;
 #define S second
 
 void solve() {
-  int n;
-  cin >> n;
-  cout << n / 2 + n % 2 << endl;
 }
 
 signed main() {
