@@ -19,12 +19,19 @@ typedef long long ll;
 #define S second
 
 void solve() {
-  vector<int> a = {1, 1, 1, 2, 1, 2, 1, 5,  2, 2, 1, 5, 1, 2, 1, 14,
-                   1, 5, 1, 5, 2, 2, 1, 15, 2, 2, 5, 4, 1, 4, 1, 51};
-  int K;
-  cin >> K;
-  cout << a[K - 1] << endl;
-
+  ll N, A, B, dist = 0;
+  cin >> N >> A >> B;
+  vector<ll> X(N);
+  REP(i, N) { cin >> X[i]; }
+  sort(ALL(X));
+  FOR(i, 0, N - 1 - 1) {
+    if ((X[i + 1] - X[i]) * A < B) {
+      dist += (X[i + 1] - X[i]) * A;
+    } else {
+      dist += B;
+    }
+  }
+  cout << dist << endl;
 }
 
 signed main() {

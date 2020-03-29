@@ -19,6 +19,15 @@ typedef long long ll;
 #define S second
 
 void solve() {
+  unsigned long long a, b, c;
+  string ans;
+  cin >> a >> b >> c;
+  if (a + b + 2 * sqrtl(a * b) < c) {
+    ans = "Yes";
+  } else {
+    ans = "No";
+  }
+  cout << ans << endl;
 }
 
 signed main() {

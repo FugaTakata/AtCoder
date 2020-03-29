@@ -19,12 +19,19 @@ typedef long long ll;
 #define S second
 
 void solve() {
-  vector<int> a = {1, 1, 1, 2, 1, 2, 1, 5,  2, 2, 1, 5, 1, 2, 1, 14,
-                   1, 5, 1, 5, 2, 2, 1, 15, 2, 2, 5, 4, 1, 4, 1, 51};
-  int K;
-  cin >> K;
-  cout << a[K - 1] << endl;
-
+  ll x, ans = 0, count = 0;
+  cin >> x;
+  ans += x / 11 * 2;
+  count = (x / 11) * 11;
+  if (x % 11 != 0) {
+    ans += 1;
+    count += 6;
+    if (6 < x % 11) {
+      ans += 1;
+      count += 5;
+    }
+  }
+  cout << ans << endl;
 }
 
 signed main() {

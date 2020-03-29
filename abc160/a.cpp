@@ -19,12 +19,13 @@ typedef long long ll;
 #define S second
 
 void solve() {
-  vector<int> a = {1, 1, 1, 2, 1, 2, 1, 5,  2, 2, 1, 5, 1, 2, 1, 14,
-                   1, 5, 1, 5, 2, 2, 1, 15, 2, 2, 5, 4, 1, 4, 1, 51};
-  int K;
-  cin >> K;
-  cout << a[K - 1] << endl;
-
+  string s;
+  cin >> s;
+  if (s[2] == s[3] && s[4] == s[5]) {
+    cout << "Yes" << endl;
+  } else {
+    cout << "No" << endl;
+  }
 }
 
 signed main() {

@@ -19,14 +19,21 @@ typedef long long ll;
 #define S second
 
 void solve() {
-  vector<int> a = {1, 1, 1, 2, 1, 2, 1, 5,  2, 2, 1, 5, 1, 2, 1, 14,
-                   1, 5, 1, 5, 2, 2, 1, 15, 2, 2, 5, 4, 1, 4, 1, 51};
-  int K;
-  cin >> K;
-  cout << a[K - 1] << endl;
-
+  int max = 0;
+  string ans = "", str;
+  cin >> str;
+  REP(i, str.length()) {
+    if (str[i] == 'A' || ans.length() != 0) {
+      ans += str[i];
+    }
+    if (str[i] == 'Z' && ans.length() != 0) {
+      if (ans.length() > max) {
+        max = ans.length();
+      }
+    }
+  }
+  cout << max << endl;
 }
-
 signed main() {
   solve();
 

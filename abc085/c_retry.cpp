@@ -19,12 +19,24 @@ typedef long long ll;
 #define S second
 
 void solve() {
-  vector<int> a = {1, 1, 1, 2, 1, 2, 1, 5,  2, 2, 1, 5, 1, 2, 1, 14,
-                   1, 5, 1, 5, 2, 2, 1, 15, 2, 2, 5, 4, 1, 4, 1, 51};
-  int K;
-  cin >> K;
-  cout << a[K - 1] << endl;
-
+  int N, Y;
+  bool ans = false;
+  cin >> N >> Y;
+  REP(i, N + 1) {
+    REP(n, N + 1) {
+      if (10000 * i + 5000 * n + (N - n - i) * 1000 == Y && i + n <= N) {
+        cout << i << ' ' << n << ' ' << N - n - i << endl;
+        ans = true;
+        break;
+      }
+    }
+    if (ans) {
+      break;
+    }
+  }
+  if (!ans) {
+    cout << "-1 -1 -1" << endl;
+  }
 }
 
 signed main() {

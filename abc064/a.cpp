@@ -19,12 +19,14 @@ typedef long long ll;
 #define S second
 
 void solve() {
-  vector<int> a = {1, 1, 1, 2, 1, 2, 1, 5,  2, 2, 1, 5, 1, 2, 1, 14,
-                   1, 5, 1, 5, 2, 2, 1, 15, 2, 2, 5, 4, 1, 4, 1, 51};
-  int K;
-  cin >> K;
-  cout << a[K - 1] << endl;
-
+  int r, g, b;
+  string ans = "";
+  cin >> r >> g >> b;
+  if ((r * 100 + g * 10 + b) % 4 == 0) {
+    cout << "YES" << endl;
+  } else {
+    cout << "NO" << endl;
+  }
 }
 
 signed main() {

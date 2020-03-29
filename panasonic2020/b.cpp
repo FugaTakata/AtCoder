@@ -19,6 +19,15 @@ typedef long long ll;
 #define S second
 
 void solve() {
+  int H, W;
+  ll ans;
+  cin >> H >> W;
+  if (W == 1 || H == 1) {
+    ans = 1;
+  } else {
+    ans = ((H * W) % 2 == 0 ? (ll)H * W / 2 : (ll)H * W / 2 + 1);
+  }
+  cout << ans << endl;
 }
 
 signed main() {

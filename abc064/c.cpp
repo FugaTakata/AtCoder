@@ -19,12 +19,28 @@ typedef long long ll;
 #define S second
 
 void solve() {
-  vector<int> a = {1, 1, 1, 2, 1, 2, 1, 5,  2, 2, 1, 5, 1, 2, 1, 14,
-                   1, 5, 1, 5, 2, 2, 1, 15, 2, 2, 5, 4, 1, 4, 1, 51};
-  int K;
-  cin >> K;
-  cout << a[K - 1] << endl;
-
+  int N, a, min = 0, max = 0;
+  vector<int> C(9, 0);
+  cin >> N;
+  REP(i, N) {
+    cin >> a;
+    if (a >= 3200) {
+      C[8] += 1;
+    } else {
+      C[a / 400] += 1;
+    }
+  }
+  REP(i, 8) {
+    if (C[i] > 0) {
+      min++;
+      max++;
+    }
+  }
+  max += C[8];
+  if (min == 0) {
+    min = 1;
+  }
+  cout << min << " " << max << endl;
 }
 
 signed main() {
