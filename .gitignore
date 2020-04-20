@@ -1,1 +1,5 @@
 .vscode
+test/
+geckodriver.log
+mkdir_atcoder.sh
+cptest.sh
