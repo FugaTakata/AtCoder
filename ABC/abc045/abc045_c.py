@@ -1,12 +1,15 @@
 s = input()
 l = len(s)
 
+ans = 0
 
-def dfs(i, f):
-    if i == l - 1:
-        return sum(list(map(int, f.split('+'))))
+for bit in range(1 << l - 1):
+    f = s[0]
 
-    return dfs(i + 1,  f + s[i + 1]) + dfs(i + 1, f + '+' + s[i + 1])
+    for i in range(l - 1):
+        if bit & (1 << i):
+            f += '+'
+        f += s[i + 1]
+    ans += sum(list(map(int, f.split('+'))))
 
-
-print(dfs(0, s[0]))
+print(ans)
