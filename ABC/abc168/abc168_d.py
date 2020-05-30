@@ -1,19 +1,26 @@
-import numpy as np
-from scipy.sparse.csgraph import shortest_path, floyd_warshall, dijkstra, bellman_ford, johnson
-from scipy.sparse import csr_matrix
+from collections import deque
 n, m = map(int, input().split())
 
-path = [sorted(list(map(int, input().split()))) for _ in range(m)]
+adjacent_list = [[] for _ in range(n + 1)]
 
-path = sorted(path, key=lambda p: min(p[0], p[1]))
+for i in range(m):
+    a, b = map(int, input().split())
+    adjacent_list[a].append(b)
+    adjacent_list[b].append(a)
 
-ans = [0] * n
+signs = [-1 for _ in range(n + 1)]
+
+que = deque()
+que.append(1)
+
+while que:
+    node = que.popleft()
+    for i in adjacent_list[node]:
+        if signs[i] == -1:
+            que.append(i)
+            signs[i] = node
+
 
 print('Yes')
-
-print(path)
-for i in range(len(path)):
-  
-
-
-print(ans)
+for i in range(2, n + 1):
+    print(signs[i])

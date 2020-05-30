@@ -1,0 +1,2 @@
+
+            #     divisors.append(n//i)
