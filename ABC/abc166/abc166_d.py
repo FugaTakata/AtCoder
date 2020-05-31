@@ -1,10 +1,7 @@
 x = int(input())
 
-for a in range(x + 1):
-    for b in range(a):
-        if a ** 5 - (b ** 5) == x:
+for b in range(2000):
+    for a in range(2000):
+        if a**5 - b**5 == x:
             print(a, b)
-            break
-        elif a ** 5 - ((-b) ** 5) == x:
-            print(a, b)
-            break
+            exit()
